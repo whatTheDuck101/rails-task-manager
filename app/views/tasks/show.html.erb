@@ -1,0 +1,15 @@
+<h2><%= @task.title %></h2>
+<p><%= @task.details %></p>
+<div class="completed-index">
+  <% if @task.completed%>
+    <i class="far fa-check-square"> Task is completed! Good job!!</i>
+  <% else %>
+    <i class="far fa-square"> Task is incomplete!!!</i>
+  <% end %>
+</div>
+
+<%= link_to "Return to maine page", index_path %>
+<%= link_to edit_path do %>
+<button class="btn">Edit</button>
+<% end %>
+

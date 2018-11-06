@@ -1,0 +1,20 @@
+<h1>Tasks Over View</h1>
+
+<div class="index-all">
+<% @tasks.each do |task| %>
+  <div class="completed-index">
+    <% if task.completed == true %>
+      <i class="far fa-check-square"></i>
+    <% else %>
+      <i class="far fa-square"></i>
+    <% end %>
+  <%= link_to task.title, task_path(task) %>
+  <%= link_to task_path(task), method: :delete, data: { confirm: "Are you sure?" } do %>
+    <i class="fas fa-trash"></i>
+  <% end %>
+
+  </div>
+<% end %>
+</div>
+
+<%= link_to "Create a new task!", new_task_path %>
